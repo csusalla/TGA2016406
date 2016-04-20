@@ -1,17 +1,13 @@
+import java.util.Date;
 
-public class Registro implements Comparable<Registro>
-{
-	private final String tempo;
-	private final double temperatura, umidade, pressao;
+public class RegistroMetereologico implements Comparable<RegistroMetereologico> {
+
+	private Date tempo;
+	private double temperatura;
+	private double umidade;
+	private double pressao;
 	
-	public Registro(String tempo, double temperatura, double umidade, double pressao){
-		this.tempo = tempo;
-		this.temperatura = temperatura;
-		this.umidade = umidade;
-		this.pressao = pressao;
-	}
-	
-	public String getTempo() {
+	public Date getTempo() {
 		return tempo;
 	}
 	public double getTemperatura() {
@@ -23,15 +19,18 @@ public class Registro implements Comparable<Registro>
 	public double getPressao() {
 		return pressao;
 	}
-
-	public int compareTo(Registro r) {
-		
-		if()
+	public RegistroMetereologico(Date tempo, double temperatura, double umidade, double pressao){
+		this.tempo = tempo;
+		this.temperatura = temperatura;
+		this.umidade = umidade;
+		this.pressao = pressao;
+	}
+	public int compareTo(RegistroMetereologico r) {
+		if(this.temperatura > r.getTemperatura())
 			return 1;
-		else if()
+		else if(this.temperatura < r.getTemperatura())
 			return -1;
 		else
 			return 0;
 	}
-	
 }
